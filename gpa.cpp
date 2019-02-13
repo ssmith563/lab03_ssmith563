@@ -8,7 +8,8 @@ double calculateGPA(int numCourses, double* courseGrades);
 
 int main(int argc, char* argv[])
 {
-  
+  if(argc>1)
+  {
   string courseNames[int(argc/2)];
   double courseGrades[int(argc/2)];
   string courseLetterGrades[int(argc/2)];
@@ -29,7 +30,9 @@ int main(int argc, char* argv[])
   cout.precision(3);  
   double result = calculateGPA(numCourses, courseGrades); 
   cout<<"GPA: "<< result <<endl;
-  
+  else{
+	  cout<<"terminate called after throwing an instance of 'std::logic_error'\n  what():  basic_string::_M_construct null not valid"
+  }
   return 0;
 }
 
