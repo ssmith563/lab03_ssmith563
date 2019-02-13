@@ -9,15 +9,17 @@ double calculateGPA(int numCourses, double* courseGrades);
 int main(int argc, char* argv[])
 {
   
-  string courseNames[5];
-  double courseGrades[5];
-  string courseLetterGrades[5];
+  string courseNames[int(argc/2)];
+  double courseGrades[int(argc/2)];
+  string courseLetterGrades[int(argc/2)];
   int numCourses = int(argc/2);
+  int arrayCounter = 0;
 
-  for (int i = 1; i< argc; i=i+2 ){
-    courseNames[i-1] = string(argv[i]);
-    courseLetterGrades[i-1] = string(argv[i+1]);
-    cout<<courseNames[i-1] << "   "<<courseLetterGrades[i-1]<<endl;
+  for (int i = 1; i<argc; i=i+2 ){
+    courseNames[arrayCounter] = string(argv[i]);
+    courseLetterGrades[arrayCounter] = string(argv[i+1]);
+    cout<<courseNames[arrayCounter] << "   "<<courseLetterGrades[arrayCounter]<<endl;
+    arrayCounter++;
   }
 
   assignCourseGrade(numCourses, courseLetterGrades, courseGrades );
@@ -33,9 +35,7 @@ int main(int argc, char* argv[])
 
 
 void assignCourseGrade(int numCourses, string courseLetterGrades[], double* courseGrades ){
-    
-    int *p=0;
-    cout<<*p<<endl;
+   
     for(int i =0 ; i < numCourses; i++){
       if(courseLetterGrades[i]=="A" || courseLetterGrades[i]=="A+"){
         courseGrades[i] = 4.0;
