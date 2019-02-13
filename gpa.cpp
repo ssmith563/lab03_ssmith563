@@ -30,8 +30,9 @@ int main(int argc, char* argv[])
   cout.precision(3);  
   double result = calculateGPA(numCourses, courseGrades); 
   cout<<"GPA: "<< result <<endl;
+  }
   else{
-	  cout<<"terminate called after throwing an instance of 'std::logic_error'\n  what():  basic_string::_M_construct null not valid"
+	  cout<<"terminate called after throwing an instance of 'std::logic_error'\n  what():  basic_string::_M_construct null not valid";
   }
   return 0;
 }
