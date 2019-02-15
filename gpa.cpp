@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cassert>
 
 using namespace std;
 
@@ -10,7 +9,7 @@ double calculateGPA(int numCourses, double* courseGrades);
 int main(int argc, char* argv[])
 {
   if(argc<2 || argc%2==0){
-	  cerr<<"Error"<<endl;
+	  cerr<<"Usage: ./gpa course letterGrade"<<endl;
   }
   else{
   string courseNames[int(argc/2)];
