@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cassert>
 
 using namespace std;
 
@@ -8,8 +9,10 @@ double calculateGPA(int numCourses, double* courseGrades);
 
 int main(int argc, char* argv[])
 {
-  if(argc>1)
-  {
+  if(argc<2 || argc%2==0){
+	  cerr<<"Error"<<endl;
+  }
+  else{
   string courseNames[int(argc/2)];
   double courseGrades[int(argc/2)];
   string courseLetterGrades[int(argc/2)];
@@ -30,9 +33,6 @@ int main(int argc, char* argv[])
   cout.precision(3);  
   double result = calculateGPA(numCourses, courseGrades); 
   cout<<"GPA: "<< result <<endl;
-  }
-  else{
-	  cout<<"terminate called after throwing an instance of 'std::logic_error'\n  what():  basic_string::_M_construct null not valid";
   }
   return 0;
 }
